@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>The Fabulous Jibber Jabber Generator</title>
+		<link rel="stylesheet" href="bootstrap.css" media="screen" charset="utf-8">
+		<link rel="stylesheet" href="main.css" media="screen" charset="utf-8">
+		<script type="text/javascript" src="handlebars.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+	</head>
+	<body>
+		<!-- BUY THIS THEME: http://adventurethemes.com/demo/writer/html/v2/index.html -->
+		<main id="form-container" class="container">
+      <div class="row">
+				<div class="col-md-8 col-sm-12 col-md-offset-2 main-content">
+					<h1>The Fabulous Jibber Jabber Generator</h1>
+          <form id="form">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" value="Strategies in a Globalized New Paradigm" class="form-control" name="title">
+            </div>
+            <div class="form-group">
+              <label for="paragraphs">Number of paragraphs</label>
+              <input type="number" value="10" class="form-control" name="paragraphs">
+            </div>
+            <div class="form-group">
+              <label for="paragraphSize">Size of paragraphs</label>
+              <input type="number" value="4" class="form-control" name="paragraphSize">
+            </div>
+            <div class="form-group">
+                <input class="btn btn-default" type="submit" value="Send">
+            </div>
+          </form>
+	      </div>
+      </div>
+    </main>
+
+		<main id="content-container" class="container"></main>
+
+		<script id="content-template" type="text/x-handlebars-template">
+		  <div class="row">
+		  	<div class="col-xs-12 single-content">
+		  		<h1>{{title}}</h1>
+					<br>
+					<blockquote>
+						{{subtitle}}
+					</blockquote>
+					<br>
+					{{#each paragraph1}}
+						<p>{{this}}</p>
+					{{/each}}
+					<p class="pullquote">{{quote}}</p>
+					{{#each paragraph2}}
+						<p>{{this}}</p>
+					{{/each}}
+		  	</div>
+		  </div>
+		</script>
+
+	</body>
+</html>
